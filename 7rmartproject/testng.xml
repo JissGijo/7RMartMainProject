@@ -10,12 +10,10 @@
 	<test thread-count="5" name="Test">
 
 		<classes>
-			<class name="testCases.CategoryTest">
-			<methods>
-			<include name="searchAndVerifyingTheProductInTheCategory"></include>
-			</methods>
-				
-			</class>
+			<class name="testCases.LoginTest"></class>
+			<class name="testCases.HomePageTest"></class>
+
+
 		</classes>
 	</test> <!--
 	Test -->
