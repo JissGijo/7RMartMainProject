@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationCore.BaseClass;
+import constants.Messages;
 import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
@@ -24,10 +25,9 @@ public class HomePageTest extends BaseClass {
 
 		HomePage homepage = new HomePage(driver);
 		homepage.clickAdminUser().clickLogOut();
-		// boolean isErrormessageDisplayed = loginpage.isErrormessageDisplayed();
-		// Assert.assertTrue(isErrormessageDisplayed, Messages.ALERTNOTFOUND);
+		
 		boolean islogintitledisplayed = homepage.isLoginTitleDispalyed();
-		Assert.assertTrue(islogintitledisplayed, ELEMENTNOTFOUND);
+		Assert.assertTrue(islogintitledisplayed,Messages.LOGOUTERROR);
 
 	}
 }

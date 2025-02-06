@@ -25,10 +25,8 @@ public class AdminUsersTest extends BaseClass {
 	public void addNewAdminUserInTheAdminUsersSection() throws IOException {
 
 		String username = ExcelUtility.readStringData(1, 0, "Login");
-
 		String password = ExcelUtility.readStringData(1, 1, "Login");
-		LoginPage loginpage = new LoginPage(driver).enterUsernameOnUsernameField(username)
-				.enterPasswordOnPasswordField(password);
+		LoginPage loginpage = new LoginPage(driver).enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password);
 		loginpage.clickSignInButton();
 
 		FakerUtility faker = new FakerUtility();
@@ -38,10 +36,10 @@ public class AdminUsersTest extends BaseClass {
 		obj.clickadminUsersPage();
 		obj.newUserClick().enterUsernameField(username1).enterPassword(password1).clickUserType().clickSaveButton();
 		boolean admintitleisdisplayed = obj.adminTitleIsDisplayed();
-		Assert.assertTrue(admintitleisdisplayed, Messages.ADMINTITLE);
+		Assert.assertTrue(admintitleisdisplayed, Messages.ADMINERROR);
 	}
 
-	@Test(description = "searchand verify the user ", priority = 2)
+	@Test(description = "search and verify the user ", priority = 2)
 	public void searchAndVerifyTheUsersInAdminUsersSection() throws IOException {
 		String username = ExcelUtility.readStringData(1, 0, "Login");
 		String password = ExcelUtility.readStringData(1, 1, "Login");
@@ -53,7 +51,7 @@ public class AdminUsersTest extends BaseClass {
 		adminuser.clickadminUsersPage();
 		adminuser.searchField().categorySearchField().searchButtonClick().resetButtoncClick();
 		boolean admintitleisdisplayed = adminuser.adminTitleIsDisplayed();
-		Assert.assertTrue(admintitleisdisplayed, Messages.ADMINTITLE);
+		Assert.assertTrue(admintitleisdisplayed, Messages.ADMINERROR);
 
 	}
 }

@@ -26,19 +26,16 @@ public class LoginTest extends BaseClass {
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password).clickSignInButton();
 		boolean isdashboardDisplayed = loginpage.isdashboardDisplayed();
-		Assert.assertTrue(isdashboardDisplayed, Messages.ELEMENTNOTFOUND);
+		Assert.assertTrue(isdashboardDisplayed, Messages.CREDENTIALERROR);
 	}
 
 	@Test(groups = {
 			"smoke" }, description = "UserLogin With Valid Username and InValid Password", priority = 2, dataProvider = "LoginProvider")
 	public void userLoginWithValidUsernameAndInValidPassword(String username, String password) throws IOException {
-
-		// String username = ExcelUtility.readStringData(2, 0, "Login");
-		// String password = ExcelUtility.readStringData(2, 1, "Login");
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password).clickSignInButton();
 		boolean iserrorMessageDisplayed = loginpage.iserrorMessageDisplayed();
-		Assert.assertTrue(iserrorMessageDisplayed, Messages.ALERTNOTFOUND);
+		Assert.assertTrue(iserrorMessageDisplayed, Messages.PASSWORDCREDENTIALERROR);
 	}
 
 	@Test(description = "UserLogin With InValid Username and Valid Password", priority = 4)
@@ -49,7 +46,7 @@ public class LoginTest extends BaseClass {
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password).clickSignInButton();
 		boolean iserrorMessageDisplayed = loginpage.iserrorMessageDisplayed();
-		Assert.assertTrue(iserrorMessageDisplayed, Messages.ALERTNOTFOUND);
+		Assert.assertTrue(iserrorMessageDisplayed, Messages.USERNAMECREDENTIALERROR);
 	}
 
 	@Test(description = "UserLogin With InValid Username and InValid Password", priority = 3)
@@ -60,7 +57,7 @@ public class LoginTest extends BaseClass {
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password).clickSignInButton();
 		boolean iserrorMessageDisplayed = loginpage.iserrorMessageDisplayed();
-		Assert.assertTrue(iserrorMessageDisplayed, Messages.ALERTNOTFOUND);
+		Assert.assertTrue(iserrorMessageDisplayed, Messages.INVALIDCREDENTIALERROR);
 
 	}
 

@@ -9,36 +9,13 @@
 			<class name="testCases.LoginTest">
 				<methods>
 					<include name="userLoginWithValidUsernameAndValidPassword"></include>
-				</methods>
-			</class>
-
-		</classes>
-	</test> <!--
-	Test -->
-	<test thread-count="5" name="Test2">
-		<parameter name="browser" value="Chrome"></parameter>
-		<classes>
-
-			<class name="testCases.LoginTest">
-				<methods>
-					<include name="userLoginWithValidUsernameAndInValidPassword"></include>
-				</methods>
-			</class>
-
-		</classes>
-	</test> <!--
-	Test -->
-	<test thread-count="5" name="Test3">
-		<parameter name="browser" value="Chrome"></parameter>
-		<classes>
-
-			<class name="testCases.LoginTest">
-				<methods>
 					<include name="userLoginWithInValidUsernameAndValidPassword"></include>
 				</methods>
 			</class>
 
 		</classes>
-	</test>
+	</test> <!--
+	Test -->
+	
 </suite> <!--
 Suite -->

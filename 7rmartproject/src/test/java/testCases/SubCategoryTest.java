@@ -35,7 +35,7 @@ public class SubCategoryTest extends BaseClass {
 		objs.clickNewCategory();
 		objs.selectCategory().CategoryField().entersubCategory(category).chooseFilebutton(choosefile).clickSavebutton();
 		boolean categoryTitleDisplayed = objs.categoryTitleDisplayed();
-		Assert.assertTrue(categoryTitleDisplayed, Messages.TITLENOTFOUND1);
+		Assert.assertTrue(categoryTitleDisplayed, Messages.SUBCATEGORYERROR);
 
 	}
 }

@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utilities.PageUtility;
+import utilities.WaitUtility;
 
 public class CategoryPage {
 	public WebDriver driver;
@@ -40,9 +41,10 @@ public class CategoryPage {
 	private WebElement resetbutton;
 
 	public CategoryPage clickCategoryPage() {
+	     WaitUtility.waitUntilElementToBeClickable(driver, clickcategorymenu);
 		PageUtility.clickOnElement(clickcategorymenu);
 		return this;
-	}
+	}    
 
 	public CategoryPage clickCategoryNewButton() {
 		PageUtility.clickOnElement(clickcategorynew);

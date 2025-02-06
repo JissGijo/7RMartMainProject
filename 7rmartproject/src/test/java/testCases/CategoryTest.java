@@ -29,7 +29,7 @@ public class CategoryTest extends BaseClass {
 		categorypage.clickCategoryPage().clickCategoryNewButton().addCatergoryField(categoryname).clickDiscountField()
 				.chooseFileButton(choosefile).clickSaveButton().categoryTitleDisplayed();
 		boolean categoryTitleDisplayed = categorypage.categoryTitleDisplayed();
-		Assert.assertTrue(categoryTitleDisplayed, Messages.TITLENOTFOUND);
+		Assert.assertTrue(categoryTitleDisplayed, Messages.CATEGORYERROR);
 	}
 
 }

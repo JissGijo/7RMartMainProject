@@ -29,7 +29,7 @@ public class ManageNewsTest extends BaseClass {
 		managepage.clickmanagenewsmenu();
 		managepage.clicknewfield().clicksavebutton().newstextfield(news).clicksavebutton();
 		boolean isTitledisplayed = managepage.isTitleDisplayed();
-		Assert.assertFalse(isTitledisplayed, Messages.MANAGENEWSTITLE);
+		Assert.assertFalse(isTitledisplayed, Messages.MANAGENEWSERROR);
 
 	}
 
