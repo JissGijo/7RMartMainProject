@@ -18,28 +18,27 @@ import constants.Constants;
 import utilities.ScreenshotUtility;
 
 public class BaseClass {
-	Properties  prop;
+	Properties prop;
 	FileInputStream fs;
-	
 
 	public WebDriver driver;
 
 	@BeforeMethod(alwaysRun = true)
 	@Parameters("browser")
 	public void initializeBrowser(String browser) throws Exception {
-     prop = new Properties();
-     fs= new FileInputStream(Constants.CONFIGFILE);
-     prop.load(fs);
+		prop = new Properties();
+		fs = new FileInputStream(Constants.CONFIGFILE);
+		prop.load(fs);
 		if (browser.equalsIgnoreCase("Chrome")) {
 
 			driver = new ChromeDriver();
-			
+
 		} else if (browser.equalsIgnoreCase("Firefox")) {
 			driver = new FirefoxDriver();
-			
+
 		} else if (browser.equalsIgnoreCase("Edge")) {
 			driver = new EdgeDriver();
-			
+
 		} else {
 			throw new Exception("Invalid Browser");
 		}
@@ -53,7 +52,7 @@ public class BaseClass {
 			ScreenshotUtility screenShot = new ScreenshotUtility();
 			screenShot.getScreenshot(driver, iTestResult.getName());
 		}
-		//driver.quit();
+		 driver.quit();
 
 	}
 

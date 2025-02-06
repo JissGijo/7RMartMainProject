@@ -14,7 +14,6 @@ public class ManageNewsPage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
 
 	@FindBy(xpath = "//p[text()='Manage News']")
 	private WebElement clickmanagenewsmenu;
@@ -25,9 +24,9 @@ public class ManageNewsPage {
 	private WebElement newstextfield;
 	@FindBy(xpath = "//button[@type='submit']")
 	private WebElement clicksavebutton;
-	@FindBy(xpath="//h1[@class='m-0 text-dark']")
-    private WebElement isTitleDisplayed;
-    
+	@FindBy(xpath = "//h1[@class='m-0 text-dark']")
+	private WebElement isTitleDisplayed;
+
 	public void clickmanagenewsmenu() {
 		PageUtility.clickOnElement(clickmanagenewsmenu);
 	}
@@ -47,9 +46,9 @@ public class ManageNewsPage {
 		PageUtility.clickOnElement(clicksavebutton);
 		return this;
 	}
+
 	public boolean isTitleDisplayed() {
 		return isTitleDisplayed.isDisplayed();
 	}
-	
-	}
 
+}

@@ -16,7 +16,6 @@ public class CategoryPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	
 	@FindBy(xpath = "//p[text()=\"Category\"]")
 	private WebElement clickcategorymenu;
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")
@@ -53,7 +52,7 @@ public class CategoryPage {
 	public CategoryPage addCatergoryField(String categoryname) {
 		categoryfield.sendKeys(categoryname);
 		return this;
-		
+
 	}
 
 	public CategoryPage clickDiscountField() {
@@ -83,7 +82,7 @@ public class CategoryPage {
 		return this;
 	}
 
-	public CategoryPage categorySearchField( String categoryname) {
+	public CategoryPage categorySearchField(String categoryname) {
 		categorysearchfield.sendKeys(categoryname);
 		return this;
 	}

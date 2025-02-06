@@ -20,14 +20,11 @@ public class LoginPage {
 	private WebElement passwordField;
 	@FindBy(xpath = "//button[@type='submit']")
 	private WebElement signInButton;
-	@FindBy(xpath="//p[text()=\"Dashboard\"]") 
+	@FindBy(xpath = "//p[text()=\"Dashboard\"]")
 	private WebElement dashboardtitle;
-	@FindBy(xpath="//button[@data-dismiss='alert']")
+	@FindBy(xpath = "//button[@data-dismiss='alert']")
 	private WebElement alertdisplayed;
-	
-	
-	
-	
+
 	public LoginPage enterUsernameOnUsernameField(String username) {
 		usernameField.sendKeys(username);
 		return this;
@@ -42,16 +39,16 @@ public class LoginPage {
 		signInButton.click();
 		return new HomePage(driver);
 	}
-	public boolean isSignInButtonDisplayed()
-	{
+
+	public boolean isSignInButtonDisplayed() {
 		return signInButton.isDisplayed();
 	}
-	public boolean isdashboardDisplayed()
-	{
+
+	public boolean isdashboardDisplayed() {
 		return dashboardtitle.isDisplayed();
 	}
-	public boolean iserrorMessageDisplayed()
-	{
+
+	public boolean iserrorMessageDisplayed() {
 		return alertdisplayed.isDisplayed();
 	}
 }

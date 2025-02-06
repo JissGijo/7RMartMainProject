@@ -20,7 +20,7 @@ public class HomePage {
 	@FindBy(xpath = "//li[@class='nav-item dropdown']")
 	private WebElement clickadminuser;
 	@FindBy(xpath = "//a[@class='dropdown-item'][2]")
-	private WebElement clicklogout; 
+	private WebElement clicklogout;
 	@FindBy(xpath = "//b[text()=\"7rmart supermarket\"]")
 	private WebElement loginpagetitletitle;
 

@@ -18,26 +18,24 @@ import pages.LoginPage;
 import pages.SubCategoryPage;
 import utilities.ExcelUtility;
 
-public class SubCategoryTest extends BaseClass{
-	
+public class SubCategoryTest extends BaseClass {
 
 	@Test(groups = { "smoke" }, description = "add a subcategory", priority = 1)
-	public void addingANewSubCategoryInTheSubCategoryField() throws IOException  { 
-		
-	String username = ExcelUtility.readStringData(1, 0, "Login");
-	String password = ExcelUtility.readStringData(1, 1, "Login");
-	LoginPage loginpage = new LoginPage(driver).enterUsernameOnUsernameField(username);
-	loginpage.enterPasswordOnPasswordField(password).clickSignInButton();
+	public void addingANewSubCategoryInTheSubCategoryField() throws IOException {
 
-	
-    String choosefile= Constants.TESTDATAFILE3;
-    String category = ExcelUtility.readStringData(1,0,"SubCategory");
-	SubCategoryPage objs= new SubCategoryPage(driver);
-	objs.subCategoryMenu();
-	objs.clickNewCategory();
-	objs.selectCategory().CategoryField().entersubCategory(category).chooseFilebutton(choosefile).clickSavebutton();
-	boolean categoryTitleDisplayed = objs.categoryTitleDisplayed();
-	Assert.assertTrue(categoryTitleDisplayed, Messages.TITLENOTFOUND1);
-	
-	}}
-	
+		String username = ExcelUtility.readStringData(1, 0, "Login");
+		String password = ExcelUtility.readStringData(1, 1, "Login");
+		LoginPage loginpage = new LoginPage(driver).enterUsernameOnUsernameField(username);
+		loginpage.enterPasswordOnPasswordField(password).clickSignInButton();
+
+		String choosefile = Constants.TESTDATAFILE3;
+		String category = ExcelUtility.readStringData(1, 0, "SubCategory");
+		SubCategoryPage objs = new SubCategoryPage(driver);
+		objs.subCategoryMenu();
+		objs.clickNewCategory();
+		objs.selectCategory().CategoryField().entersubCategory(category).chooseFilebutton(choosefile).clickSavebutton();
+		boolean categoryTitleDisplayed = objs.categoryTitleDisplayed();
+		Assert.assertTrue(categoryTitleDisplayed, Messages.TITLENOTFOUND1);
+
+	}
+}

@@ -6,7 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class PageUtility {
-	
+
 	public static WebDriver driver;
 
 	public static void clickOnElement(WebElement element) {

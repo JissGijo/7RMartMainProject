@@ -16,7 +16,7 @@ import utilities.ExcelUtility;
 public class ManageNewsTest extends BaseClass {
 
 	@Test(description = "Addding A New News To The Manage News Section", priority = 1)
-	public void adddingANewNewsToTheManageNewsSection() throws IOException { 
+	public void adddingANewNewsToTheManageNewsSection() throws IOException {
 
 		String username = ExcelUtility.readStringData(1, 0, "Login");
 		String password = ExcelUtility.readStringData(1, 1, "Login");

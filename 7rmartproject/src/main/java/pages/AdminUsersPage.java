@@ -10,14 +10,13 @@ import utilities.PageUtility;
 
 public class AdminUsersPage {
 
-  public WebDriver driver;
+	public WebDriver driver;
 
 	public AdminUsersPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 
 	}
-	
 
 	@FindBy(xpath = "//a[@class='small-box-footer']")
 	private WebElement adminUsersClick;
@@ -42,57 +41,61 @@ public class AdminUsersPage {
 	@FindBy(xpath = "//h1[text()=\"Admin Users\"]")
 	private WebElement admintitleisdisplayed;
 
-	public void  clickadminUsersPage() {
-				PageUtility.clickOnElement(adminUsersClick);
-				
+	public void clickadminUsersPage() {
+		PageUtility.clickOnElement(adminUsersClick);
+
 	}
 
 	public AdminUsersPage newUserClick() {
 		PageUtility.clickOnElement(newuserclick);
 		return this;
-		
+
 	}
 
-	public AdminUsersPage  enterUsernameField(String username) {
+	public AdminUsersPage enterUsernameField(String username) {
 		usernametextfield.sendKeys(username);
 		return this;
 	}
-	public AdminUsersPage  enterPassword(String password) {
+
+	public AdminUsersPage enterPassword(String password) {
 		passwordtextfield.sendKeys(password);
 		return this;
 	}
 
-	public AdminUsersPage  clickUserType() {
+	public AdminUsersPage clickUserType() {
 		Select select = new Select(usertype);
 		select.selectByVisibleText("Staff");
 		return this;
-		
+
 	}
 
-	public AdminUsersPage  clickSaveButton() {
+	public AdminUsersPage clickSaveButton() {
 		PageUtility.clickOnElement(clicksavebutton);
 		return this;
 	}
-	public AdminUsersPage  searchField()
-	{
+
+	public AdminUsersPage searchField() {
 		PageUtility.clickOnElement(searchfield);
 		return this;
-		
+
 	}
-	public AdminUsersPage  categorySearchField()
-	{
+
+	public AdminUsersPage categorySearchField() {
 		categorysearchfield.sendKeys("jiss");
 		return this;
 	}
+
 	public AdminUsersPage searchButtonClick() {
 		PageUtility.clickOnElement(searchbuttton);
 		return this;
 	}
+
 	public AdminUsersPage resetButtoncClick() {
 		PageUtility.clickOnElement(resetbutton);
 		return this;
-		
+
 	}
+
 	public boolean adminTitleIsDisplayed() {
 		return admintitleisdisplayed.isDisplayed();
 	}

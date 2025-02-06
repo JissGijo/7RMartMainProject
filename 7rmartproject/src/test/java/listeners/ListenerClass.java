@@ -13,7 +13,7 @@ import automationCore.BaseClass;
 import utilities.ExtendReportUtility;
 
 public class ListenerClass extends BaseClass implements ITestListener {
-	
+
 	ExtentTest test;
 
 	ExtentReports extent = ExtendReportUtility.createExtentReports();
@@ -22,7 +22,7 @@ public class ListenerClass extends BaseClass implements ITestListener {
 
 	public void onTestStart(ITestResult result) {
 
-		ITestListener.super.onTestStart(result); 
+		ITestListener.super.onTestStart(result);
 
 		test = extent.createTest(result.getMethod().getMethodName());
 

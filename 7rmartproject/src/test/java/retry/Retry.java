@@ -22,7 +22,7 @@ public class Retry implements IRetryAnalyzer {
 			}
 		}
 		return false;
-		
+
 	}
 
 	public String getResultStatusName(final int status) {
